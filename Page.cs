@@ -63,6 +63,15 @@ namespace httpc
                     AddIfValid(src.Value);
                 }
             }
+
+            foreach (var audio in this.document.DocumentNode.SelectNodes("//audio/source"))
+            {
+                HtmlAttribute src = audio.Attributes["src"];
+                if (src != null && Regex.IsMatch(src.Value, pattern))
+                {
+                    AddIfValid(src.Value);
+                }
+            }
         }
 
         /// <summary>
