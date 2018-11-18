@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using CommandLine;
 
-    class Options
+    internal class Options
     {
         [Option('u', Required = true, HelpText = "The URLs to process.")]
         public IEnumerable<string> Urls { get; set; }
@@ -24,7 +24,7 @@
 
     internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(RunOptionsAndReturnExitCode)
