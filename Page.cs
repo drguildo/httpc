@@ -54,6 +54,15 @@ namespace httpc
                     AddIfValid(href.Value);
                 }
             }
+
+            foreach (var video in this.document.DocumentNode.SelectNodes("//video/source"))
+            {
+                HtmlAttribute src = video.Attributes["src"];
+                if (src != null && Regex.IsMatch(src.Value, pattern))
+                {
+                    AddIfValid(src.Value);
+                }
+            }
         }
 
         /// <summary>
