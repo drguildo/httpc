@@ -7,7 +7,7 @@ namespace httpc
 
     public class Page
     {
-        public Uri BaseUrl { get; private set; }
+        public Uri BaseUrl { get; }
         public IEnumerable<Uri> Media { get { return foundMedia; } }
         public string Text
         {
