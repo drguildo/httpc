@@ -17,7 +17,7 @@ namespace httpc
             }
         }
 
-        private HtmlDocument document;
+        private readonly HtmlDocument document;
         private readonly HashSet<Uri> foundMedia;
 
         public Page(string url)
