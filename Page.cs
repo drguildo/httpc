@@ -27,7 +27,7 @@ namespace httpc
 
             var web = new HtmlWeb();
             this.document = web.Load(this.BaseUrl);
-            if (!(web.StatusCode == System.Net.HttpStatusCode.OK))
+            if (web.StatusCode != System.Net.HttpStatusCode.OK)
             {
                 Console.Error.WriteLine($"Received HTTP status code {web.StatusCode}");
                 Environment.Exit(-1);
