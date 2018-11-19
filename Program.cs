@@ -6,19 +6,19 @@
 
     internal class Options
     {
-        [Option('u', Required = true, HelpText = "The URLs to process.")]
+        [Option('u', "url", Required = true, HelpText = "The URLs to process.")]
         public IEnumerable<string> Urls { get; set; }
 
-        [Option('p', HelpText = "The pattern that discovered URLs must match.")]
+        [Option('p', "pattern", HelpText = "The pattern that discovered URLs must match.")]
         public string Pattern { get; set; }
 
-        [Option('d', Default = false, HelpText = "Download discovered URLs.")]
+        [Option('d', "download", Default = false, HelpText = "Download discovered URLs.")]
         public bool Download { get; set; }
 
         [Option("print", Default = false, HelpText = "Print the contents of the URL to stdout.")]
         public bool Print { get; set; }
 
-        [Option('v', Default = false, HelpText = "Prints all messages to standard output.")]
+        [Option('v', "verbose", Default = false, HelpText = "Prints all messages to standard output.")]
         public bool Verbose { get; set; }
     }
 
