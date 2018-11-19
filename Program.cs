@@ -63,12 +63,11 @@
                 foreach (var mediaUrl in page.Media)
                 {
                     Console.WriteLine(mediaUrl);
-                }
-
-                if (opts.Download)
-                {
-                    var downloader = new Downloader(page.Media);
-                    downloader.BeginDownloading(opts.Verbose);
+                    if (opts.Download)
+                    {
+                        var webClient = new System.Net.WebClient();
+                        webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl));;
+                    }
                 }
             }
         }
