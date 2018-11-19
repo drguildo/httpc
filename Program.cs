@@ -60,9 +60,15 @@
                     page.FindMedia(opts.Pattern);
                 }
 
-                foreach (var m in page.Media)
+                foreach (var mediaUrl in page.Media)
                 {
-                    Console.WriteLine(m);
+                    Console.WriteLine(mediaUrl);
+                }
+
+                if (opts.Download)
+                {
+                    var downloader = new Downloader(page.Media);
+                    downloader.BeginDownloading(opts.Verbose);
                 }
             }
         }
