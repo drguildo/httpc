@@ -27,16 +27,7 @@
         private static void Main(string[] args)
         {
             Parser.Default.ParseArguments<Options>(args)
-                .WithParsed(RunOptionsAndReturnExitCode)
-                .WithNotParsed(HandleParseErrors);
-        }
-
-        private static void HandleParseErrors(IEnumerable<Error> errs)
-        {
-            foreach (var err in errs)
-            {
-                Console.Error.WriteLine(err);
-            }
+                .WithParsed(RunOptionsAndReturnExitCode);
         }
 
         private static void RunOptionsAndReturnExitCode(Options opts)
@@ -66,7 +57,7 @@
                     if (opts.Download)
                     {
                         var webClient = new System.Net.WebClient();
-                        webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl));;
+                        webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl)); ;
                     }
                 }
             }
