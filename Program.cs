@@ -28,10 +28,10 @@
         {
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(RunOptionsAndReturnExitCode)
-                .WithNotParsed(HandleParseError);
+                .WithNotParsed(HandleParseErrors);
         }
 
-        private static void HandleParseError(IEnumerable<Error> errs)
+        private static void HandleParseErrors(IEnumerable<Error> errs)
         {
             foreach (var err in errs)
             {
