@@ -20,9 +20,9 @@ namespace httpc
         private readonly HtmlDocument document;
         private readonly HashSet<Uri> foundMedia;
 
-        public Page(string url)
+        public Page(Uri url)
         {
-            this.BaseUrl = new Uri(url);
+            this.BaseUrl = url;
             this.foundMedia = new HashSet<Uri>();
 
             var web = new HtmlWeb();

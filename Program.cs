@@ -34,7 +34,7 @@
         {
             foreach (var url in opts.Urls)
             {
-                var page = new Page(url);
+                var page = new Page(new Uri(url));
 
                 if (opts.Print)
                 {
