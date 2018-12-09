@@ -56,8 +56,10 @@
                     Console.WriteLine(mediaUrl);
                     if (opts.Download)
                     {
-                        var webClient = new System.Net.WebClient();
-                        webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl)); ;
+                        using (var webClient = new System.Net.WebClient())
+                        {
+                            webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl)); ;
+                        }
                     }
                 }
             }
