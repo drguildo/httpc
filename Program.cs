@@ -30,31 +30,31 @@
                 .WithParsed(RunOptionsAndReturnExitCode);
         }
 
-        private static void RunOptionsAndReturnExitCode(Options opts)
+        private static void RunOptionsAndReturnExitCode(Options options)
         {
-            foreach (var url in opts.Urls)
+            foreach (var url in options.Urls)
             {
                 var page = new Page(new Uri(url));
 
-                if (opts.Print)
+                if (options.Print)
                 {
                     Console.WriteLine(page.Text);
                     Environment.Exit(0);
                 }
 
-                if (string.IsNullOrWhiteSpace(opts.Pattern))
+                if (string.IsNullOrWhiteSpace(options.Pattern))
                 {
                     page.FindMedia();
                 }
                 else
                 {
-                    page.FindMedia(opts.Pattern);
+                    page.FindMedia(options.Pattern);
                 }
 
                 foreach (var mediaUrl in page.Media)
                 {
                     Console.WriteLine(mediaUrl);
-                    if (opts.Download)
+                    if (options.Download)
                     {
                         using (var webClient = new System.Net.WebClient())
                         {
