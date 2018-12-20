@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using CommandLine;
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses")]
     internal class Options
     {
         [Option('u', "url", Required = true, HelpText = "The URLs to process.")]
