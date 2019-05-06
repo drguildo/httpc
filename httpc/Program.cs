@@ -2,7 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+
     using CommandLine;
+
+    using httpc.Model;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses")]
     internal class Options

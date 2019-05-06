@@ -1,4 +1,4 @@
-namespace httpc
+namespace httpc.Model
 {
     using System;
     using System.Collections.Generic;
