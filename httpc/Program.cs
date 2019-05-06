@@ -28,10 +28,10 @@
         private static void Main(string[] args)
         {
             Parser.Default.ParseArguments<Options>(args)
-                .WithParsed(RunOptionsAndReturnExitCode);
+                .WithParsed(RunWithOptions);
         }
 
-        private static void RunOptionsAndReturnExitCode(Options options)
+        private static void RunWithOptions(Options options)
         {
             foreach (var url in options.Urls)
             {
