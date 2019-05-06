@@ -9,6 +9,7 @@ namespace httpc
     {
         public Uri BaseUrl { get; }
         public IEnumerable<Uri> Media { get { return foundMedia; } }
+
         public string Text
         {
             get

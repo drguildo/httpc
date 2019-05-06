@@ -59,7 +59,7 @@
                     {
                         using (var webClient = new System.Net.WebClient())
                         {
-                            webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl)); ;
+                            webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl));
                         }
                     }
                 }
