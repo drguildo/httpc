@@ -60,10 +60,8 @@
                     Console.WriteLine(mediaUrl);
                     if (options.Download)
                     {
-                        using (var webClient = new System.Net.WebClient())
-                        {
-                            webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl));
-                        }
+                        using var webClient = new System.Net.WebClient();
+                        webClient.DownloadFile(mediaUrl, Utilities.FilenameFromUri(mediaUrl));
                     }
                 }
             }
