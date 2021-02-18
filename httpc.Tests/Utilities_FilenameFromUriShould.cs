@@ -9,8 +9,7 @@ namespace httpc.Tests
         [TestMethod]
         public void ThrowArgumentExceptionOnNull()
         {
-            Action action = () => Utilities.FilenameFromUri(null);
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<ArgumentException>(() => Utilities.FilenameFromUri(null));
         }
     }
 }
