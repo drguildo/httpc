@@ -16,7 +16,7 @@ namespace httpc
                 throw new ArgumentException("URI cannot be null");
             }
 
-            return uri.Segments[uri.Segments.Length - 1];
+            return uri.Segments[^1];
         }
     }
 }
